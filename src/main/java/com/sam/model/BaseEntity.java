@@ -1,7 +1,9 @@
 package com.sam.model;
 
 import java.io.Serializable;
+import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -19,6 +21,17 @@ public class BaseEntity implements Serializable {
 
 	@Version
 	private Integer version;
+	
+	@Column(name="UpdateDate")
+	private Date date;
+
+	public Date getDate() {
+		return date;
+	}
+
+	public void setDate(Date date) {
+		this.date = date;
+	}
 
 	public Integer getId() {
 		return id;
@@ -27,7 +40,7 @@ public class BaseEntity implements Serializable {
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
+	
 	public Integer getVersion() {
 		return version;
 	}
